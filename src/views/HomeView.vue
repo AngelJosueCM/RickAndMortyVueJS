@@ -1,13 +1,18 @@
 <template>
-  <div class="home">
-    <h1>Rick and Morty</h1>
-    <div class="content">
+  <div class="home" style="background-image: url(https://images3.alphacoders.com/812/812062.png);">
+    <h1 style="color: white;">Rick and Morty</h1>
+    <div class="container" >
       <div v-for="(character, index) in characters" :key="index">
-    <div>{{ character.name }}</div>
-    <img :src="character.image" alt="">
-    <div>{{ character.gender }}</div>
-    </div>
-    </div>
+    <mat-card class="card" style="width: 18rem;">
+      <!-- <mat-card-header> -->
+            <h3>{{ character.name }}</h3>
+          <div>{{ character.gender }}</div>
+        <div>{{ character.status }}</div>
+            <img :src="character.image" alt="">
+            <!-- </mat-card-header> -->
+          </mat-card>
+        </div>
+        </div>
   </div>
 </template>
 
@@ -43,14 +48,27 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 body{
-  background-color:black ;
+  margin: 0px;
+  margin-top: 0px;
+  /* background-color:black ; */
 }
-.content{
-  display: grip;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 10px;
+.card{
+    margin: 3rem;
+    width: 200px;
+    height: 200px;
+    color: white;
+    /* margin-top: 28rem; */
+}
+
+.container{
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+    
 }
 </style>
